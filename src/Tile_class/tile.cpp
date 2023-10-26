@@ -1,26 +1,27 @@
-#include "tile.hpp"
-#include <iostream>
+#include "Tile.hpp"
 
 Tile::Tile() : status(EMPTY) {}
 
-// Конструктор с начальным статусом
 Tile::Tile(Status initialStatus) : status(initialStatus) {}
 
-// Получить текущий статус тайтла
 Tile::Status Tile::getStatus() const {
     return status;
 }
 
-// Получить текстовое представление статуса для отладки
+void Tile::setStatus(Status newStatus) {
+    status = newStatus;
+}
+
 std::string Tile::getStatusString() const {
     switch (status) {
         case EMPTY:
-            return "EMPTY";
+            return "Empty";
         case OCCUPIED:
-            return "OCCUPIED";
+            return "Occupied";
         case DESTROYED:
-            return "DESTROYED";
+            return "Destroyed";
         default:
-            return "UNKNOWN";
+            return "Unknown";
     }
 }
+

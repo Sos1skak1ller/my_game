@@ -20,6 +20,8 @@ add_executable(my_game  src/main.cpp
                         src/Tile_class/tile.hpp
                         src/Tile_class/Grid_class/grid.cpp
                         src/Tile_class/Grid_class/grid.hpp
+                        src/GameObj_class/gameObj.hpp
+                        src/GameObj_class/gameObj.cpp
                         src/GameObj_class/Building_class/Comertial_building_class/comertial.cpp
                         src/GameObj_class/Building_class/Comertial_building_class/comertial.hpp
                         src/GameObj_class/Building_class/Industrial_building_class/industrial.cpp

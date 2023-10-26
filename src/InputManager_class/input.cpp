@@ -1,51 +1,40 @@
-#include <SFML/Graphics.hpp>
+#include "input.hpp"
 
-using namespace sf;
+InputManager::InputManager(RenderWindow& window) : window(window) {
+    setCursorVisible(true);
+}
 
-class InputManager {
-public:
-    InputManager(RenderWindow& window) : window(window) {
-        // Устанавливаем начальное положение курсора
-        cursorPosition = sf::Vector2i(0, 0);
-    }
+InputManager::InputManager(RenderWindow& window, bool hideCursor) : window(window) {
+    setCursorVisible(!hideCursor);
+}
 
-    void update() {
-        Event event;
-        while (window.pollEvent(event)) {
-            if (event.type == Event::Closed) {
-                window.close();
-            }
+void InputManager::update() {
+    Event event;
+    while (window.pollEvent(event)) {
+        if (event.type == Event::Closed) {
+            window.close();
+        }
 
-            if (event.type == Event::KeyPressed) {
-                // Обработка нажатий клавиш
-                handleKeyPress(event.key.code);
-            }
-
-            if (event.type == Event::MouseMoved) {
-                // Обновляем положение курсора
-                cursorPosition = sf::Mouse::getPosition(window);
-            }
+        if (event.type == Event::KeyPressed) {
+            handleKeyPress(event.key.code);
         }
     }
 
-    void setCursorVisible(bool visible) {
-        window.setMouseCursorVisible(visible);
-    }
+    cursorPosition = Mouse::getPosition(window);
+}
 
-    Vector2i getCursorPosition() const {
-        return cursorPosition;
-    }
+void InputManager::setCursorVisible(bool visible) {
+    window.setMouseCursorVisible(visible);
+}
 
-private:
-    RenderWindow& window;
-    Vector2i cursorPosition;
+Vector2i InputManager::getCursorPosition() const {
+    return cursorPosition;
+}
 
-    void handleKeyPress(Keyboard::Key key) {
-        // Обработка нажатий клавиш клавиатуры
-        if (key == Keyboard::Escape) {
-            // Пример: нажатие клавиши Пробел
-            
-        }
-        // Добавьте обработку других клавиш по мере необходимости
+void InputManager::handleKeyPress(Keyboard::Key key) {
+    // Обработка нажатия клавиш, например:
+    if (key == Keyboard::Escape) {
+        window.close();
     }
-};
+    // Добавьте обработку других клавиш по вашим потребностям.
+}

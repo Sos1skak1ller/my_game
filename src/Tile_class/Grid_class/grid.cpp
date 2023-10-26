@@ -1,28 +1,25 @@
 #include "grid.hpp"
 
-// Определение конструктора класса Grid
+// Реализация конструктора
 Grid::Grid(int rows, int cols) : numRows(rows), numCols(cols) {
-    // Инициализация сетки с пустыми тайлами
     grid.resize(numRows, std::vector<Tile>(numCols));
 }
 
-// Определение метода getTile
+// Реализация метода для получения тайла по координатам
 Tile& Grid::getTile(int row, int col) {
     if (row >= 0 && row < numRows && col >= 0 && col < numCols) {
         return grid[row][col];
     } else {
-        // Обработка ошибки или возврат специального тайла по умолчанию
-        // В данном случае, вернем первый тайл
+        // Вернуть пустой тайл или обработать ошибку
         return grid[0][0];
     }
 }
 
-// Определение метода getNumRows
+// Реализация методов для получения количества строк и столбцов
 int Grid::getNumRows() const {
     return numRows;
 }
 
-// Определение метода getNumCols
 int Grid::getNumCols() const {
     return numCols;
 }

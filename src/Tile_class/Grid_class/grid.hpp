@@ -7,17 +7,11 @@ class Grid {
 public:
     Grid(int rows, int cols);
 
-    // Получить тайл по его координатам
-    Tile& getTile(int row, int col);
+    Tile& getTile(int row, int col); // Получить тайл по его координатам
 
-    // Метод для 
-    void setTileBorderColor(int row, int col, sf::Color color);
+    int getNumRows() const; // Получить количество строк
 
-    // Получить количество строк
-    int getNumRows() const;
-
-    // Получить количество столбцов
-    int getNumCols()const;
+    int getNumCols()const; // Получить количество столбцов
 
 private:
     int numRows;

@@ -1,12 +1,15 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include <iostream>
 
 using namespace sf;
 
 class InputManager {
 public:
     InputManager(RenderWindow& window);
+
+    InputManager(RenderWindow& window, bool hideCursor);
 
     void update();
 
