@@ -22,14 +22,8 @@ add_executable(my_game  src/main.cpp
                         src/Tile_class/Grid_class/grid.hpp
                         src/GameObj_class/gameObj.hpp
                         src/GameObj_class/gameObj.cpp
-                        src/GameObj_class/Building_class/Comertial_building_class/comertial.cpp
-                        src/GameObj_class/Building_class/Comertial_building_class/comertial.hpp
-                        src/GameObj_class/Building_class/Industrial_building_class/industrial.cpp
-                        src/GameObj_class/Building_class/Industrial_building_class/industrial.hpp
-                        src/GameObj_class/Building_class/Recidental_building_class/residental.cpp
-                        src/GameObj_class/Building_class/Recidental_building_class/residental.hpp
-                        src/GameObj_class/Building_class/bulding.cpp
-                        src/GameObj_class/Building_class/bulding.hpp
+                        src/GameObj_class/Building_class/building.cpp
+                        src/GameObj_class/Building_class/building.hpp
                         src/GameObj_class/Car_class/car.hpp
                         src/GameObj_class/Car_class/car.cpp
                         src/GameObj_class/Road_class/road.cpp
@@ -38,10 +32,6 @@ add_executable(my_game  src/main.cpp
                         src/GameUI_class/ui.cpp
                         src/InputManager_class/input.cpp
                         src/InputManager_class/input.hpp
-                        src/ResourseManager_class/resourse.cpp
-                        src/ResourseManager_class/resourse.hpp
-                        src/TraficSimulation_class/trafSim.cpp
-                        src/TraficSimulation_class/trafSim.hpp
                         )
 target_link_libraries(my_game PRIVATE sfml-graphics)
 target_compile_features(my_game PRIVATE cxx_std_17)

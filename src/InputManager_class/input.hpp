@@ -17,10 +17,14 @@ public:
 
     Vector2i getCursorPosition() const;
 
+    void handleKeyPress(Keyboard::Key key);
+
+    bool isKeyPressed(Keyboard::Key key);
+
 private:
     RenderWindow& window;
     Vector2i cursorPosition;
-
-    void handleKeyPress(Keyboard::Key key);
+    // void handleKeyPress(Keyboard::Key key);
+    // void isKeyPressed(Keyboard::Key key);
 };
 

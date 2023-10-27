@@ -6,12 +6,17 @@
 
 class GameTimer {
 public:
-    GameTimer();
-    void Start();
-    void Stop();
-    void SetTimeScale(float scale);
-    float GetTimeScale() const;
-    float Update();
+    GameTimer(); // Конструктор 
+
+    void Start(); // Начать таймер
+
+    void Stop(); // Остановить таймер
+
+    void SetTimeScale(float scale); // Установить масштаб времени (ускорение симуляции)
+
+    float GetTimeScale() const; // Получить текущий масштаб времени
+    
+    float Update(); // Обновить таймер и получить прошедшее время
 
 private:
     sf::Clock clock;

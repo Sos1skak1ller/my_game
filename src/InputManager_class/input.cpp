@@ -38,3 +38,9 @@ void InputManager::handleKeyPress(Keyboard::Key key) {
     }
     // Добавьте обработку других клавиш по вашим потребностям.
 }
+
+bool InputManager::isKeyPressed(Keyboard::Key key){
+    if(key == Keyboard::Space){
+        
+    }
+}
